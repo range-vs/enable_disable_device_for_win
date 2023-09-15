@@ -14,6 +14,7 @@ class Program
             }
 
             string deviceGuid = args[0];
+            string status = args[1];
 
             // Get the ManagementClass for working with WMI
             ManagementClass managementClass = new ManagementClass("Win32_PnPEntity");
@@ -31,8 +32,6 @@ class Program
 
                     if (deviceId.Contains(deviceGuid))
                     {
-                        string status = args[1];
-
                         if (status == "1")
                         {
                             // Enable the device
